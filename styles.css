@@ -12,18 +12,41 @@
   align-items: center;
   border: 1px solid black;
   padding: 1rem;
+  color: rgb(231, 222, 222);
 }
 
-.titleContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-}
-.titleContainer > * {
-  margin: 0rem;
+.no-underline {
+  color: #2f56B0;
+  position: relative;
+  font-size: 40px;
+  text-decoration: none;
+  transition: .4s ease-out;
 }
 
-form {
-  margin: 1rem;
+.no-underline::after{
+  border-radius: 1em;
+  border-top: 1em solid #2f56B0;
+  position: absolute;
+  text-decoration: underline;
+  right: 100%;
+  bottom: 14em;
+  left: 0;
+  transition: right .6s;
+          
+
+}
+
+.no-underline:hover {
+  color: #457DFB;
+  transition: .6s ease-out;
+  
+}
+
+.no-underline:hover::after{
+  color: #457DFB;
+  right: 0;
+}
+
+body {
+  background-image: url(https://t4.ftcdn.net/jpg/05/13/31/85/360_F_513318571_UN8aRbksEPY0U878SOEm2T6EN4X7BZrN.jpg)
 }
