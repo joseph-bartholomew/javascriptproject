@@ -12,7 +12,7 @@ clubNames.forEach(function (clubName) {
   clubSelectDropdown.appendChild(option);
 });
 
-function submitCLubSelected() {
+function submitClubSelected() {
   // just placeholder
   const selectedOption =
     clubSelectDropdown.options[clubSelectDropdown.selectedIndex];
