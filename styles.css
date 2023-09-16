@@ -48,5 +48,7 @@
 }
 
 body {
-  background-image: url(https://t4.ftcdn.net/jpg/05/13/31/85/360_F_513318571_UN8aRbksEPY0U878SOEm2T6EN4X7BZrN.jpg)
+  background-image: url(https://t4.ftcdn.net/jpg/05/13/31/85/360_F_513318571_UN8aRbksEPY0U878SOEm2T6EN4X7BZrN.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
