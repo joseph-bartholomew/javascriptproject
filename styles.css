@@ -6,6 +6,10 @@
   font-family: var(--main-font);
 }
 
+h1 {
+  text-align: center;
+}
+
 .mainContainer {
   display: flex;
   flex-direction: column;
