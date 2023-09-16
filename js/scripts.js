@@ -5,10 +5,10 @@ var orgSelectDropdown = document.getElementById("orgs");
 
 // populating the dropdown from the array
 
-orgNames.forEach(function (clubName) {
+orgNames.forEach(function (orgName) {
   var option = document.createElement("Option");
-  option.value = clubName.toLowerCase().replace(/\s/g, "");
-  option.text = clubName;
+  option.value = orgName.toLowerCase().replace(/\s/g, "");
+  option.text = orgName;
   orgSelectDropdown.appendChild(option);
 });
 
