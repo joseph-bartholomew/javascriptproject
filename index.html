@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Registration Tool</title>
 </head>
+<!-- did some basic setup, feel free to change anything.
+     just wanted to get something to work with-->
+
 <body>
-    
+    <div class="mainContainer">
+
+        <h1>Lorem ipsum</h1>
+
+        <!-- dropdown menu for selecting a club for a player, currently only premade clubs -->
+        <form action="#">
+            <label for="clubs">Select a club</label>
+            <select name="clubs" id="clubs">
+                <option value="placeholder">Select a club...</option>
+            </select>
+            <input type="submit" value="Submit" onclick="submitCLubSelected()">
+        </form>
+
+    </div>
+    <script src="js/scripts.js"></script>
 </body>
+
 </html>
