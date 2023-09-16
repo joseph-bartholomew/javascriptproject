@@ -11,24 +11,35 @@
     <link rel="stylesheet" href="styles.css">
     <title>Sports Reg</title>
 </head>
-<!-- did some basic setup, feel free to change anything.
-     just wanted to get something to work with-->
 
 <body>
     <div class="mainContainer">
 
-        <h1>Lorem ipsum</h1>
+        <div class="titleContainer">
+            <h1>Sports Reg</h1>
+            <h2 id="teamSelected">No Team Selected</h2>
 
-        <!-- dropdown menu for selecting a club for a player, currently only premade clubs -->
+        </div>
+
+        <form>
+            <input type="radio" id="orgDiamondSelector" name="orgSelector" value="orgDiamondSelector">
+            <label for="orgOneSelector">Diamond Bats</label>
+            <input type="radio" id="orgPowerSelector" name="orgSelector" value="orgPowerSelector">
+            <label for="orgTwoSelector">Power Shots</label>
+            <input type="radio" id="orgSpeedySelector" name="orgSelector" value="orgSpeedySelector">
+            <label for="orgOneSelector">Speedy Sprinters</label>
+        </form>
+
         <form action="#">
-            <label for="orgs">Select an org</label>
-            <select name="orgs" id="orgs">
-                <option value="placeholder">Select an org...</option>
+            <label for="team">Select an org: </label>
+            <select name="teams" id="teamDropdown">
+                <option value="placeholder">Select a team...</option>
             </select>
-            <input type="submit" value="Submit" onclick="submitOrgSelected()">
+            <input type="submit" value="Submit" onclick="submitTeamSelected(event)">
         </form>
 
     </div>
+
     <script src="js/scripts.js"></script>
 </body>
 
