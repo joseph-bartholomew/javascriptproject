@@ -19,29 +19,38 @@
 <body>
     <div class="mainContainer rounded bg-custom">
 
-        <div class="titleContainer">
+        <div class="titleContainer text-center">
             <h1>Sports Reg</h1>
-            <h2 id="teamSelected">No Team Selected</h2>
+            <h4 id="selectInstructions">Select an Organization</h4>
+            <!-- <h2 id="teamSelected">No Team Selected</h2> -->
 
         </div>
+        <div id="orgSelectorContainer" class="text-center">
+            <form>
+                <input class="p-2" type="radio" id="orgDiamondSelector" name="orgSelector" value="orgDiamondSelector">
+                <label class="p-1" for="orgDiamondSelector">Diamond Bats</label>
+                <input class="p-2" type="radio" id="orgPowerSelector" name="orgSelector" value="orgPowerSelector">
+                <label class="p-1" for="orgPowerSelector">Power Shots</label>
+                <input class="p-2" type="radio" id="orgSpeedySelector" name="orgSelector" value="orgSpeedySelector">
+                <label class="p-1" for="orgSpeedySelector">Speedy Sprinters</label>
+            </form>
+            <input type="submit" value="Next Page" class="btn btn-secondary m-2" onclick="setPageTeamSelect(event)">
+            <p id="errorMessage" class="position-absolute">Please select an
+                option
+                before
+                continuing...</p>
+        </div>
+        <div id="teamSelectorContainer" class="text-center" style="display: none;">
+            <form class="pb-2" action="#">
+                <label for="teamDropdown">Select a team: </label>
+                <select name="teams" id="teamDropdown">
+                    <option value="placeholder">Select a team...</option>
+                </select>
 
-        <form>
-            <input type="radio" id="orgDiamondSelector" name="orgSelector" value="orgDiamondSelector">
-            <label for="orgOneSelector">Diamond Bats</label>
-            <input type="radio" id="orgPowerSelector" name="orgSelector" value="orgPowerSelector">
-            <label for="orgTwoSelector">Power Shots</label>
-            <input type="radio" id="orgSpeedySelector" name="orgSelector" value="orgSpeedySelector">
-            <label for="orgOneSelector">Speedy Sprinters</label>
-        </form>
+            </form>
+            <input type="submit" value="Submit" class="btn btn-secondary" onclick="submitTeamSelected(event)">
 
-        <form action="#">
-            <label for="team">Select an org: </label>
-            <select name="teams" id="teamDropdown">
-                <option value="placeholder">Select a team...</option>
-            </select>
-            <input type="submit" value="Submit" onclick="submitTeamSelected(event)">
-        </form>
-
+        </div>
     </div>
     <script src="js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

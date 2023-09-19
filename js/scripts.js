@@ -40,6 +40,8 @@ function populateTeamList() {
 const orgDiamondRadio = document.getElementById("orgDiamondSelector");
 const orgPowerRadio = document.getElementById("orgPowerSelector");
 const orgSpeedyRadio = document.getElementById("orgSpeedySelector");
+let isChecked = false;
+let selectedOrganization = "";
 
 orgDiamondRadio.addEventListener("change", function () {
   if (orgDiamondRadio.checked) {
@@ -47,6 +49,8 @@ orgDiamondRadio.addEventListener("change", function () {
     teamNames = orgDiamondList.slice();
     console.log(teamNames);
     populateTeamList();
+    selectedOrganization = "Diamond Bats";
+    isChecked = true;
   }
 });
 
@@ -56,6 +60,8 @@ orgPowerRadio.addEventListener("change", function () {
     teamNames = orgPowerList.slice();
     console.log(teamNames);
     populateTeamList();
+    selectedOrganization = "Power Shots";
+    isChecked = true;
   }
 });
 
@@ -65,6 +71,8 @@ orgSpeedyRadio.addEventListener("change", function () {
     teamNames = orgSpeedyList.slice();
     console.log(teamNames);
     populateTeamList();
+    selectedOrganization = "Speedy Sprinters";
+    isChecked = true;
   }
 });
 
@@ -72,9 +80,24 @@ function submitTeamSelected(event) {
   event.preventDefault(); //prevents page reloading when hitting submit
   // just placeholder
 
-  const selectedOption =
-    teamSelectDropdown.options[teamSelectDropdown.selectedIndex];
-  document.getElementById(
-    "teamSelected"
-  ).innerHTML = `Selected: ${selectedOption.text}`;
+  // const selectedOption =
+  //   teamSelectDropdown.options[teamSelectDropdown.selectedIndex];
+  // document.getElementById(
+  //   "teamSelected"
+  // ).innerHTML = `Selected: ${selectedOption.text}`;
+}
+
+const orgSelectorDiv = document.getElementById("orgSelectorContainer");
+const teamSelectorDiv = document.getElementById("teamSelectorContainer");
+
+function setPageTeamSelect() {
+  if (isChecked) {
+    orgSelectorDiv.style.display = "none";
+    teamSelectorDiv.style.display = "inline";
+    document.getElementById(
+      "selectInstructions"
+    ).innerHTML = `Organization: ${selectedOrganization}<br>Select a team...`;
+  } else {
+    document.getElementById("errorMessage").style.display = "block";
+  }
 }

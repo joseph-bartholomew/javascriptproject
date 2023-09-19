@@ -10,6 +10,12 @@ h1 {
   text-align: center;
 }
 
+#errorMessage {
+  display: none;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .mainContainer {
   display: flex;
   flex-direction: column;
