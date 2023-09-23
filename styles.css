@@ -6,6 +6,13 @@
   font-family: var(--main-font);
 }
 
+body {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  height: 100vh;
+}
+
 /* Center the container and add some padding */
 .mainContainer {
   display: flex;
@@ -73,4 +80,44 @@
 /* Add some space between form elements */
 .form-row {
   margin-bottom: 10px;
+}
+
+.btn-submit {
+  background: #457dfb;
+  cursor: pointer;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: bold;
+}
+.btn-submit:hover {
+  background: #588cfe;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.btn-nextpage {
+  color: white;
+  background-color: #457dfb;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: bold;
+  font-size: 1.15rem;
+  margin-top: 1rem;
+  padding: 0.1rem 0.75rem;
+}
+
+.btn-nextpage:hover {
+  background: #588cfe;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.selected-text {
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5em;
+  color: #fff;
+  border-radius: 0.2em;
+  margin: 0.5em;
+  width: auto;
 }

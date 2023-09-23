@@ -1,11 +1,29 @@
+const submitOrgButton = document.getElementById("submitOrgButton");
+const teamSubmitButton = document.getElementById("submitTeamButton");
+
 // array of organization names
 let orgNames = ["Diamond Bats", "Power Shots", "Speedy Sprinters"];
 
 // array of team names for each organization
 let orgTeams = {
-  "Diamond Bats": ["Diamond Baseball", "Diamond Basketball", "Diamond Soccer", "Diamond Football"],
-  "Power Shots": ["Power Baseball", "Power Basketball", "Power Soccer", "Power Football"],
-  "Speedy Sprinters": ["Speedy Baseball", "Speedy Basketball", "Speedy Soccer", "Speedy Football"]
+  "Diamond Bats": [
+    "Diamond Baseball",
+    "Diamond Basketball",
+    "Diamond Soccer",
+    "Diamond Football",
+  ],
+  "Power Shots": [
+    "Power Baseball",
+    "Power Basketball",
+    "Power Soccer",
+    "Power Football",
+  ],
+  "Speedy Sprinters": [
+    "Speedy Baseball",
+    "Speedy Basketball",
+    "Speedy Soccer",
+    "Speedy Football",
+  ],
 };
 
 // Function to populate the Teams dropdown based on the selected organization
@@ -26,38 +44,12 @@ function populateTeamList(selectedOrg) {
   }
 }
 
-// Event listeners for radio buttons to select organizations
-const orgDiamondRadio = document.getElementById("orgDiamondSelector");
-const orgPowerRadio = document.getElementById("orgPowerSelector");
-const orgSpeedyRadio = document.getElementById("orgSpeedySelector");
-let selectedOrganization = "";
-
-orgDiamondRadio.addEventListener("change", function () {
-  if (orgDiamondRadio.checked) {
-    populateTeamList("Diamond Bats"); // Update the selected organization here
-    selectedOrganization = "Diamond Bats";
-  }
-});
-
-orgPowerRadio.addEventListener("change", function () {
-  if (orgPowerRadio.checked) {
-    populateTeamList("Power Shots"); // Update the selected organization here
-    selectedOrganization = "Power Shots";
-  }
-});
-
-orgSpeedyRadio.addEventListener("change", function () {
-  if (orgSpeedyRadio.checked) {
-    populateTeamList("Speedy Sprinters"); // Update the selected organization here
-    selectedOrganization = "Speedy Sprinters";
-  }
-});
-
 // Function to handle the submission of the organization selection
 function submitOrgSelected() {
   const selectedOrg = document.getElementById("orgs").value; // Get the selected organization
   if (selectedOrg !== "placeholder") {
     populateTeamList(selectedOrg); // Populate the teams dropdown based on the selected organization
+    submitOrgButton.style.background = "#93c47d";
   }
 }
 
@@ -65,15 +57,21 @@ function submitOrgSelected() {
 function submitTeamSelected() {
   const selectedTeam = document.getElementById("teams").value; // Get the selected team
   if (selectedTeam !== "placeholder") {
-    // You can do something with the selected team here
-    console.log("Selected Team: " + selectedTeam);
+    submitTeamButton.style.background = "#93c47d";
   }
 }
 
-const submitTeamButton = document.getElementById("submitTeamButton");
+const nextPageBtn = document.getElementById("nextPageBtn");
 
 // Add a click event listener to the button
-submitTeamButton.addEventListener("click", function () {
-  // Redirect to form.html when the button is clicked
-  window.location.href = "form.html"; // Corrected path to form.html
+nextPageBtn.addEventListener("click", function () {
+  // Get the selected organization and team values
+  const selectedOrg = document.getElementById("orgs").value;
+  const selectedTeamDropdown = document.getElementById("teams");
+  const selectedTeamIndex = selectedTeamDropdown.selectedIndex;
+  const selectedTeam = selectedTeamDropdown.options[selectedTeamIndex].text;
+  if (selectedOrg !== "placeholder" && selectedTeam !== "placeholder") {
+    // Redirect to form.html with query parameters
+    window.location.href = `form.html?org=${selectedOrg}&team=${selectedTeam}`;
+  }
 });
