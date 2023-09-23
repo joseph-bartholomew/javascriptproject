@@ -66,16 +66,14 @@ function submitTeamSelected() {
   const selectedTeam = document.getElementById("teams").value; // Get the selected team
   if (selectedTeam !== "placeholder") {
     // You can do something with the selected team here
-    window.location.href = `form.html?org=${selectedOrg}&team=${selectedTeam}`;
     console.log("Selected Team: " + selectedTeam);
   }
 }
-
 
 const submitTeamButton = document.getElementById("submitTeamButton");
 
 // Add a click event listener to the button
 submitTeamButton.addEventListener("click", function () {
-    // Redirect to form.html when the button is clicked
-    window.location.href = "../form.html";
+  // Redirect to form.html when the button is clicked
+  window.location.href = "form.html"; // Corrected path to form.html
 });

@@ -20,15 +20,25 @@
 
         <!-- Retrieve the organization and team values from query parameters -->
         <script>
-            const urlParams = new URLSearchParams(window.location.search);
-            const org = urlParams.get("org");
-            const team = urlParams.get("team");
+function getQueryParams() {
+  const params = new URLSearchParams(window.location.search);
+  const org = params.get("org");
+  const team = params.get("team");
+  return { org, team };
+}
 
-            // Populate the organization and team fields with the retrieved values
-            if (org && team) {
-                document.getElementById("orgField").textContent = `Organization: ${org}`;
-                document.getElementById("teamField").textContent = `Team: ${team}`;
-            }
+// Function to update the form with selected organization and team
+function updateForm() {
+  const { org, team } = getQueryParams();
+  if (org && team) {
+    // Update the form fields with the selected organization and team
+    document.getElementById("selectedOrg").textContent = org;
+    document.getElementById("selectedTeam").textContent = team;
+  }
+}
+
+// Call the updateForm function to display the selected organization and team
+updateForm();
         </script>
 
         <!-- Player Registration Form -->
