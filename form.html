@@ -22,7 +22,7 @@
         <h2>Player Registration</h2>
 
         <!-- Player Registration Form -->
-        <form>
+        <form id="playerForm">
             <div id="selectedOrg" class="selected-text bg-secondary"></div>
             <div id="selectedTeam" class="selected-text bg-secondary"></div>
 
@@ -77,29 +77,8 @@
             <button class="btn btn-primary" type="submit">Submit Form</button>
         </form>
     </div>
-    <!-- Retrieve the organization and team values from query parameters -->
-    <script>
-        function getQueryParams() {
-            const params = new URLSearchParams(window.location.search);
-            const org = params.get("org");
-            const team = params.get("team");
-            return { org, team };
-        }
 
-        // Function to update the form with selected organization and team
-        function updateForm() {
-            const { org, team } = getQueryParams();
-            if (org && team) {
-                // Update the form fields with the selected organization and team
-                document.getElementById("selectedOrg").textContent = `Org: ${org}`;
-                document.getElementById("selectedTeam").textContent = `Team: ${team}`;
-            }
-        }
-
-        // Call the updateForm function to display the selected organization and team
-        updateForm();
-    </script>
-    <!-- <script src="js/scripts.js"></script> -->
+    <script type="module" src="js/formscript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

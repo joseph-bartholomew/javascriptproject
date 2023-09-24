@@ -4,6 +4,9 @@
 
 * {
   font-family: var(--main-font);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -89,6 +92,7 @@ body {
   border-radius: 0.5rem;
   border: none;
   font-weight: bold;
+  padding: 0.25rem;
 }
 .btn-submit:hover {
   background: #588cfe;
@@ -120,4 +124,39 @@ body {
   border-radius: 0.2em;
   margin: 0.5em;
   width: auto;
+}
+
+.confirmationContainer {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+}
+
+.passwordShowContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.infoSubContainer {
+  border: 1px black solid;
+  border-radius: 0.5rem;
+  background-color: rgb(229, 229, 229);
+  padding: 0.25rem;
+  width: 50%;
+  height: 1.5rem;
+}
+
+.parentContainer {
+  width: 100%;
+  margin: 1rem 0rem;
+}
+
+.infoContainer {
+  position: relative;
+  width: 100%;
+}
+
+.btn-confirm {
+  font-size: 1rem;
+  padding: 0.5rem;
 }
