@@ -4,8 +4,8 @@ function getQueryParams() {
   const params = new URLSearchParams(window.location.search);
   const org = params.get("org");
   const team = params.get("team");
-  const firstName = params.get("firstName");
-  const lastName = params.get("lastName");
+  const firstName = params.get("firstname");
+  const lastName = params.get("lastname");
   const username = params.get("username");
   const password = params.get("password");
   const state = params.get("state");
